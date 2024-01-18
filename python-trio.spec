@@ -13,7 +13,7 @@ BuildArch:  noarch
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(pypi)
+BuildRequires:  python3dist(pip)
 BuildRequires:  python3dist(wheel)
 
 %description
