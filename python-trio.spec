@@ -1,6 +1,6 @@
-%define %{pkgname} trio
+%define pypi_name trio
 
-Name:       python-%{pkgname}
+Name:       python-%{pypi_name}
 Version:    0.24.0
 Release:    1
 Summary:    A friendly Python library for async concurrency and I/O
@@ -29,7 +29,7 @@ correctness.  Concurrency is complicated; we try to make it easy to get things
 right.}
 
 %prep
-%autosetup -n %{pkgname}-%{version} -p 1
+%autosetup -n %{pypi_name}-%{version} -p 1
 
 %build
 %py_build
