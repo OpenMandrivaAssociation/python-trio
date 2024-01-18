@@ -1,4 +1,4 @@
-%define trio %{pkgname}
+%define %{pkgname} trio
 
 Name:       python-%{pkgname}
 Version:    0.24.0
