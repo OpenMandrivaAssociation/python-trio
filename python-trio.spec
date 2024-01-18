@@ -39,3 +39,5 @@ right.}
 %py_install
 
 %files 
+%{python_sitelib}/trio-%{version}.dist-info
+%{python_sitelib}/trio/
