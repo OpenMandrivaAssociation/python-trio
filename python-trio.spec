@@ -16,6 +16,8 @@ BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(pip)
 BuildRequires:  python3dist(wheel)
 
+Requires: python3dist(outcome)
+
 %description
 The Trio project's goal is to produce a production-quality, permissively
 licensed, async/await-native I/O library for Python.  Like all async libraries,
@@ -33,7 +35,6 @@ right.}
 
 %build
 %py_build
-
 
 %install
 %py_install
