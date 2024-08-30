@@ -1,7 +1,7 @@
 %define pypi_name trio
 
 Name:       python-%{pypi_name}
-Version:    0.24.0
+Version:    0.26.2
 Release:    1
 Summary:    A friendly Python library for async concurrency and I/O
 License:    MIT or ASL 2.0
