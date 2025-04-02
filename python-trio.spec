@@ -1,22 +1,23 @@
 %define pypi_name trio
 
-Name:       python-%{pypi_name}
-Version:    0.27.0
-Release:    1
-Summary:    A friendly Python library for async concurrency and I/O
-License:    MIT or ASL 2.0
-Group:      Development/Python
-URL:        https://pypi.org/project/trio/
-Source0:    https://files.pythonhosted.org/packages/source/t/trio/trio-%{version}.tar.gz
-BuildArch:  noarch
+Name:		python-%{pypi_name}
+Version:	0.29.0
+Release:	1
+Summary:	A friendly Python library for async concurrency and I/O
+License:	MIT or ASL 2.0
+Group:		Development/Python
+URL:		https://pypi.org/project/trio/
+Source0:	https://files.pythonhosted.org/packages/source/t/trio/trio-%{version}.tar.gz
+BuildArch:	noarch
 %{?python_provide:%python_provide python3-%{pkgname}}
 
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(pip)
-BuildRequires:  python3dist(wheel)
+BuildRequires:	python
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
 
-Requires: python3dist(outcome)
+Requires:	python%{pyver}dist(outcome)
 
 %description
 The Trio project's goal is to produce a production-quality, permissively
@@ -32,6 +33,7 @@ right.}
 
 %prep
 %autosetup -n %{pypi_name}-%{version} -p 1
+sed -i '/\/usr\/bin\/env\ python3/d' src/trio/_tests/check_type_completeness.py src/trio/_tools/gen_exports.py
 
 %build
 %py_build
